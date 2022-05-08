@@ -4,12 +4,12 @@
 using namespace std;
 
 int main(){
-	map<int , int> m;
-	int n , r , avg;
+	map<long long , long long> m;
+	long long n , r , avg;
 	cin >> n >> r >> avg;
-	int needed = n*avg;
+	long long needed = n*avg;
 	for(int i = 0;i < n; i++){
-		int x , y;
+		long long x , y;
 		cin >> x >> y;
 		needed-=x;
 		if(m.find(y) == m.end()){
@@ -20,14 +20,15 @@ int main(){
 		}
 	}
 	auto it = m.begin();
-	int cost = 0;
+	long long cost = 0;
 	while(needed > 0){
-		if(it->second == 0){
-			it++;
+		if(needed - it->second <= 0){
+			cost+=it->first * needed;	
+			break;
 		}
-		needed-=1;
-		cost+=it->first;
-		it->second-=1;
+		needed-=it->second;
+		cost+=it->first * it->second;
+		it++;
 	}
 	cout << cost << endl;
 }

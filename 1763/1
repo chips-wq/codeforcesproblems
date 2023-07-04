@@ -1,0 +1,31 @@
+In file included from /usr/include/c++/12.2.0/bits/stl_algobase.h:71,
+                 from /usr/include/c++/12.2.0/bits/specfun.h:45,
+                 from /usr/include/c++/12.2.0/cmath:1935,
+                 from /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/stdc++.h:41,
+                 from B.cpp:1:
+/usr/include/c++/12.2.0/bits/predefined_ops.h: In instantiation of ‘bool __gnu_cxx::__ops::_Val_less_iter::operator()(_Value&, _Iterator) const [with _Value = const int; _Iterator = __gnu_cxx::__normal_iterator<monster*, std::vector<monster> >]’:
+/usr/include/c++/12.2.0/bits/stl_algo.h:2024:14:   required from ‘_ForwardIterator std::__upper_bound(_ForwardIterator, _ForwardIterator, const _Tp&, _Compare) [with _ForwardIterator = __gnu_cxx::__normal_iterator<monster*, vector<monster> >; _Tp = int; _Compare = __gnu_cxx::__ops::_Val_less_iter]’
+/usr/include/c++/12.2.0/bits/stl_algo.h:2059:32:   required from ‘_FIter std::upper_bound(_FIter, _FIter, const _Tp&) [with _FIter = __gnu_cxx::__normal_iterator<monster*, vector<monster> >; _Tp = int]’
+B.cpp:29:50:   required from here
+/usr/include/c++/12.2.0/bits/predefined_ops.h:98:22: error: no match for ‘operator<’ (operand types are ‘const int’ and ‘monster’)
+   98 |       { return __val < *__it; }
+      |                ~~~~~~^~~~~~~
+In file included from /usr/include/c++/12.2.0/bits/stl_algobase.h:67:
+/usr/include/c++/12.2.0/bits/stl_iterator.h:1246:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __normal_iterator<_IteratorL, _Container>&, const __normal_iterator<_IteratorR, _Container>&)’
+ 1246 |     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/12.2.0/bits/stl_iterator.h:1246:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/12.2.0/bits/predefined_ops.h:98:22: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘const int’
+   98 |       { return __val < *__it; }
+      |                ~~~~~~^~~~~~~
+/usr/include/c++/12.2.0/bits/stl_iterator.h:1254:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __normal_iterator<_Iterator, _Container>&, const __normal_iterator<_Iterator, _Container>&)’
+ 1254 |     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/12.2.0/bits/stl_iterator.h:1254:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/12.2.0/bits/predefined_ops.h:98:22: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘const int’
+   98 |       { return __val < *__it; }
+      |                ~~~~~~^~~~~~~
+B.cpp: In function ‘bool step(int&, int&, std::vector<monster>&)’:
+B.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+   36 | }
+      | ^
